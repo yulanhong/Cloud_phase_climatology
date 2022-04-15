@@ -1,0 +1,29 @@
+
+Do colj=1, modNcol
+  Do rowi=1, modNrow
+	modlat_scp=nint(modlat(colj,rowi)+90)
+	modlon_scp=nint(modlon(colj,rowi))
+
+	IF (modcldphase(colj,rowi) == 1) Then
+		modclr_num(modlon_scp,modlat_scp)= modclr_num(modlon_scp,modlat_scp)+1
+		modclr_hetero(modlon_scp,modlat_scp)= modclr_hetero(modlon_scp,modlat_scp)+&
+		cld_spi(1,colj,rowi)
+	    !print *,cld_spi(1,colj,rowi)
+	EndIf
+	IF (modcldphase(colj,rowi) == 2) Then
+		modliq_num(modlon_scp,modlat_scp)= modliq_num(modlon_scp,modlat_scp)+1
+		modliq_hetero(modlon_scp,modlat_scp)= modliq_hetero(modlon_scp,modlat_scp)+&
+		cld_spi(1,colj,rowi)
+	EndIf
+	IF (modcldphase(colj,rowi) == 3) Then
+		modice_num(modlon_scp,modlat_scp)= modice_num(modlon_scp,modlat_scp)+1
+		modice_hetero(modlon_scp,modlat_scp)= modice_hetero(modlon_scp,modlat_scp)+&
+		cld_spi(1,colj,rowi)
+	EndIf
+
+	modobs_num(modlon_scp,modlat_scp)=modobs_num(modlon_scp,modlat_scp)+1
+	modobs_hetero(modlon_scp,modlat_scp)= modobs_hetero(modlon_scp,modlat_scp)+&
+		cld_spi(1,colj,rowi)
+  EndDo
+EndDo
+

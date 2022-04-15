@@ -1,0 +1,6 @@
+deallocate(modlat)
+deallocate(modlon)
+deallocate(solarzenith)
+deallocate(landsea)
+deallocate(rad_250)
+deallocate(rad_1000emis)

@@ -1,0 +1,6 @@
+ 	deallocate(lon)
+    deallocate(lat)
+    deallocate(clayer)
+    deallocate(cphase)
+	deallocate(dem_hgt)
+	deallocate(cldtime)

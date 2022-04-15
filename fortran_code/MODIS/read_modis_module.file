@@ -1,0 +1,14 @@
+mod02fname=mod02_list(modfi)
+mod03fname=mod03_list(modfi)
+mod06fname=mod06_list(modfi)
+print *,myid,modfi,mod02fname(65:66),mod02fname
+read(mod02fname(65:66),'(f2.0)') mod_hh
+read(mod02fname(67:68),'(f2.0)') mod_min
+
+call read_modis03(mod03fname)
+call read_modis02(mod02fname)
+call read_modis06(mod06fname)
+
+allocate(difflat(modNcol,modNrow))
+allocate(difflon(modNcol,modNrow))
+allocate(dismodcld(modNcol,modNrow))

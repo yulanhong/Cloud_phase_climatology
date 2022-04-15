@@ -1,0 +1,6 @@
+deallocate(modlat)
+deallocate(modlon)
+deallocate(solarzenith)
+deallocate(landsea)
+deallocate(cld_spi)
+deallocate(modcldphase)
